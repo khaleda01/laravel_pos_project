@@ -35,7 +35,7 @@ class UnitController extends Controller
       
 
        $user->save();
-       return redirect()->route('unit');
+       return redirect()->route('u_show');
     }
 
     /**
@@ -69,7 +69,7 @@ class UnitController extends Controller
        $user->u_status = $request->input('u_status');
 
         $user->save();
-        return redirect()->route('unit');
+        return redirect()->route('u_show');
     }
 
     /**

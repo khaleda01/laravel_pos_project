@@ -5,6 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>My Project</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
@@ -20,14 +21,14 @@
     <link rel="shortcut icon" href="../../assets/images/favicon.png" />
   </head>
   <body>
-    <div class="container-scroller">
+    <div class="container-scroller  ">
       <!-- partial:../../partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+        <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top bg-primary ">
           <a class="sidebar-brand brand-logo" href="../../index.html"><img src="../../assets/images/hous1.avif" alt="logo" /></a>
           <a class="sidebar-brand brand-logo-mini" href="../../index.html"><img src="../../assets/images/logo-mini.svg" alt="logo" /></a>
         </div>
-        <ul class="nav">
+        <ul class="nav bg-primary ">
           <li class="nav-item profile">
             <div class="profile-desc">
               <div class="profile-pic">
@@ -35,8 +36,10 @@
                   <img class="img-xs rounded-circle " src="../../assets/images/faces/face15.jpg" alt="">
                   <span class="count bg-success"></span>
                 </div>
+
                 <div class="profile-name">
-                  <h5 class="mb-0 font-weight-normal">Khaleda Akter</h5>
+                  
+                  <h5 class="mb-0 font-weight-normal bg-dark">Khaleda Akter</h5>
                   <span>Gold Member</span>
                 </div>
               </div>
@@ -77,6 +80,7 @@
               </div>
             </div>
           </li>
+          
           <li class="nav-item nav-category">
             <span class="nav-link">Navigation</span>
           </li>
@@ -85,7 +89,7 @@
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
-              <span class="menu-title">Dashboard</span>
+              <span class="menu-title text-white">Dashboard</span>
             </a>
           </li>
           <li class="nav-item menu-items">
@@ -93,31 +97,51 @@
               <span class="menu-icon">
                 <i class="mdi mdi-laptop"></i>
               </span>
-              <span class="menu-title">Customers</span>
+              <span class="menu-title text-white">Customers</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">All Customers</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/dropdowns.html">Add Customer</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('customer')}}">Add Customers</a></li>
+                <li class="nav-item"> <a class="nav-link" href="viewcustomers">View Customer</a></li>
                 
               </ul>
             </div>
           </li>
+
+         
           
           <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#A" aria-expanded="false" aria-controls="A">
               <span class="menu-icon">
                 <i class="mdi mdi-laptop"></i>
               </span>
-              <span class="menu-title">Products</span>
+              <span class="menu-title text-white">Products</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="A">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">All Products</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/dropdowns.html">Add Product</a></li>
+                <li class="nav-item"> <a class="nav-link" href="addproducts">Add Products</a></li>
+                <li class="nav-item"> <a class="nav-link" href="viewproducts">View Product</a></li>
 
+              </ul>
+            </div>
+          </li>
+
+
+          <li class="nav-item menu-items">
+            <a class="nav-link" data-toggle="collapse" href="#z" aria-expanded="false" aria-controls="z">
+              <span class="menu-icon">
+                <i class="mdi mdi-laptop"></i>
+              </span>
+              <span class="menu-title text-white">Sales Order</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="z">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="salesorder">Add Order</a></li>
+                <li class="nav-item"> <a class="nav-link" href="">View Order</a></li>
+                
               </ul>
             </div>
           </li>
@@ -127,13 +151,13 @@
               <span class="menu-icon">
                 <i class="mdi mdi-laptop"></i>
               </span>
-              <span class="menu-title">Categories</span>
+              <span class="menu-title text-white">Categories</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="B">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="addcategories">All Categories</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/dropdowns.html">Add Categories</a></li>
+                <li class="nav-item"> <a class="nav-link" href="addcategories">Add Categories</a></li>
+                <li class="nav-item"> <a class="nav-link" href="viewcategories">View Categories</a></li>
 
               </ul>
             </div>
@@ -144,13 +168,13 @@
               <span class="menu-icon">
                 <i class="mdi mdi-laptop"></i>
               </span>
-              <span class="menu-title">Brand</span>
+              <span class="menu-title text-white">Brand</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="C">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">All Brands</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/dropdowns.html">Add Brand</a></li>
+                <li class="nav-item"> <a class="nav-link" href="addbrands">Add Brands</a></li>
+                <li class="nav-item"> <a class="nav-link" href="viewbrands">View Brand</a></li>
 
               </ul>
             </div>
@@ -161,13 +185,13 @@
               <span class="menu-icon">
                 <i class="mdi mdi-laptop"></i>
               </span>
-              <span class="menu-title">Unit</span>
+              <span class="menu-title text-white">Unit</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="D">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="addunits">All Units</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/dropdowns.html">Add Purchase</a></li>
+                <li class="nav-item"> <a class="nav-link" href="addunits">Add Units</a></li>
+                <li class="nav-item"> <a class="nav-link" href="viewunits">View Purchase</a></li>
 
               </ul>
             </div>
@@ -178,19 +202,19 @@
               <span class="menu-icon">
                 <i class="mdi mdi-laptop"></i>
               </span>
-              <span class="menu-title">Purchase Order</span>
+              <span class="menu-title text-white">Suppliers</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="E">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">All Purchase</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/dropdowns.html">Add Purchase</a></li>
+                <li class="nav-item"> <a class="nav-link" href="addsuppliers">Add Suppliers</a></li>
+                <li class="nav-item"> <a class="nav-link" href="viewsuppliers">View Suppliers</a></li>
 
               </ul>
             </div>
           </li>
 
-          <li class="nav-item menu-items">
+          {{-- <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#F" aria-expanded="false" aria-controls="F">
               <span class="menu-icon">
                 <i class="mdi mdi-laptop"></i>
@@ -205,14 +229,14 @@
 
               </ul>
             </div>
-          </li>
+          </li> --}}
 
           <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <span class="menu-icon">
                 <i class="mdi mdi-security"></i>
               </span>
-              <span class="menu-title">User</span>
+              <span class="menu-title text-white">User</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="auth">
@@ -238,7 +262,7 @@
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
         <!-- partial:../../partials/_navbar.html -->
-        <nav class="navbar p-0 fixed-top d-flex flex-row">
+        <nav class="navbar p-0 fixed-top d-flex flex-row bg-primary">
           <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
             <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../assets/images/logo-mini.svg" alt="logo" /></a>
           </div>
@@ -246,16 +270,16 @@
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
               <span class="mdi mdi-menu"></span>
             </button>
-            <ul class="navbar-nav w-100">
+            <ul class="navbar-nav w-100 text-white">
               <li class="nav-item w-100">
-                <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
+                <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search ">
                   <input type="text" class="form-control" placeholder="Search products">
                 </form>
               </li>
             </ul>
             <ul class="navbar-nav navbar-nav-right">
               <li class="nav-item dropdown d-none d-lg-block">
-                <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-toggle="dropdown" aria-expanded="false" href="#">+ Create New Project</a>
+                {{-- <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-toggle="dropdown" aria-expanded="false" href="#"></a> --}}
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="createbuttonDropdown">
                   <h6 class="p-3 mb-0">Projects</h6>
                   <div class="dropdown-divider"></div>
@@ -392,7 +416,7 @@
                 <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
                   <div class="navbar-profile">
                     <img class="img-xs rounded-circle" src="../../assets/images/faces/face15.jpg" alt="">
-                    <p class="mb-0 d-none d-sm-block navbar-profile-name">Henry Klein</p>
+                    <p class="mb-0 d-none d-sm-block navbar-profile-name">Admin</p>
                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                   </div>
                 </a>
@@ -409,6 +433,8 @@
                       <p class="preview-subject mb-1">Settings</p>
                     </div>
                   </a>
+
+                
                   <div class="dropdown-divider"></div>
                   <form class="text-center" method="POST" action="{{ route('logout')}}">
                     @csrf
@@ -418,7 +444,8 @@
                         {{ __('Log Out') }}
                     </x-dropdown-link>
                   </form>
-                  <div class="dropdown-divider"></div>
+              
+                  {{-- <div class="dropdown-divider"></div> --}}
                 </div>
               </li>
             </ul>

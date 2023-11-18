@@ -12907,7 +12907,7 @@ button.bg-dark:focus {
   border-left: 0 !important; }
 
 .border-primary {
-  border-color: #0090e7 !important; }
+  border-color: #0090e7!important; }
 
 .border-secondary, .loader-demo-box {
   border-color: #e4eaec !important; }
@@ -21126,7 +21126,7 @@ div.tagsinput {
       width: 100%; } }
 
 .content-wrapper {
-  background: #000000;
+  background: white;
   padding: 1.875rem 1.75rem;
   width: 100%;
   -webkit-flex-grow: 1;

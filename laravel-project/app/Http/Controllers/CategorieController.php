@@ -36,7 +36,7 @@ class CategorieController extends Controller
       
 
        $user->save();
-       return redirect()->route('categorie');
+       return redirect()->route('c_show');
     }
 
     /**
@@ -70,7 +70,7 @@ class CategorieController extends Controller
        $user->c_status = $request->input('c_status');
 
         $user->save();
-        return redirect()->route('categorie');
+        return redirect()->route('c_show');
     }
 
     /**
